@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 45937784}
   m_Layer: 0
   m_Name: Red
-  m_TagString: Untagged
+  m_TagString: RedEraser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 704422758}
   m_Layer: 0
   m_Name: White
-  m_TagString: Untagged
+  m_TagString: RedEraser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -572,6 +572,7 @@ GameObject:
   - component: {fileID: 851072330}
   - component: {fileID: 851072329}
   - component: {fileID: 851072334}
+  - component: {fileID: 851072335}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -690,6 +691,19 @@ MonoBehaviour:
   PowerGauge: {fileID: 1027063290}
   rb: {fileID: 851072329}
   pushEffectObject: {fileID: 431422593}
+--- !u!114 &851072335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851072328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad8f736d5d534adbbbb5b86e748eeeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 6266122106603622449, guid: 25b30d41fb747415196d18d0f2459899, type: 3}
 --- !u!1 &899701127
 GameObject:
   m_ObjectHideFlags: 0
