@@ -18,7 +18,9 @@ public class GaugeMove : MonoBehaviour
     void Update()
     {
         PowerGauge.value = MovePower;
-
+        if(Input.GetKeyDown(KeyCode.W)){
+            MovePower = 0;
+        }
         if(Input.GetKey(KeyCode.W)){
             MovePower += Time.deltaTime * 100;
             
@@ -27,7 +29,7 @@ public class GaugeMove : MonoBehaviour
             }
         }
         if(Input.GetKeyUp(KeyCode.W)){
-            rb.AddForce(transform.forward * -1 * MovePower, ForceMode.Impulse);
+            rb.AddForce(transform.forward * -1 * MovePower/10, ForceMode.Impulse);
         }
         if(Input.GetKey(KeyCode.A)){
             transform.Rotate(0, -1, 0);
