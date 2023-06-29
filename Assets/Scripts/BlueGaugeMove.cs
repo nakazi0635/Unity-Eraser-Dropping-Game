@@ -8,10 +8,12 @@ public class BlueGaugeMove : MonoBehaviour
     private float MovePower;
     public Slider PowerGauge;
     public Rigidbody rb;
+    public GameObject pushEffectObject;
     // Start is called before the first frame update
     void Start()
     {
         MovePower = 0;
+        pushEffectObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,6 +22,7 @@ public class BlueGaugeMove : MonoBehaviour
         PowerGauge.value = MovePower;
         if(Input.GetKeyDown(KeyCode.UpArrow)){
             MovePower = 0;
+            pushEffectObject.SetActive(true);
         }
         if(Input.GetKey(KeyCode.UpArrow)){
             MovePower += Time.deltaTime * 100;
@@ -29,7 +32,8 @@ public class BlueGaugeMove : MonoBehaviour
             }
         }
         if(Input.GetKeyUp(KeyCode.UpArrow)){
-            rb.AddForce(transform.forward * -1 * MovePower/10, ForceMode.Impulse);
+            rb.AddForce(transform.forward * -1 * MovePower/5, ForceMode.Impulse);
+            pushEffectObject.SetActive(false);
         }
         if(Input.GetKey(KeyCode.LeftArrow)){
             transform.Rotate(0, -1, 0);
