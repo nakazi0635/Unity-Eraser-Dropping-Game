@@ -11,11 +11,17 @@ public class BlueGaugeMove : MonoBehaviour
     public Slider PowerGauge;
     public Rigidbody rb;
     public GameObject pushEffectObject;
+    public GameObject jumpEffectObject;
+    public GameObject fallCamera;
+    public GameObject cmVcam;
+    public GameObject canvas;
+    private float time = 3;
     // Start is called before the first frame update
     void Start()
     {
         MovePower = 0;
         pushEffectObject.SetActive(false);
+        jumpEffectObject.SetActive(false);
 
         audioSource = GetComponent<AudioSource>(); // AudioSourceを取得
         audioSource.clip = SE1; // 効果音を設定
@@ -24,6 +30,12 @@ public class BlueGaugeMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        time += Time.deltaTime;
+        if(transform.position.y < -1){
+            fallCamera.SetActive(true);
+            cmVcam.SetActive(true);
+            canvas.SetActive(false);
+        }
         PowerGauge.value = MovePower;
         if(Input.GetKeyDown(KeyCode.UpArrow)){
             MovePower = 0;
@@ -47,6 +59,13 @@ public class BlueGaugeMove : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.RightArrow)){
             transform.Rotate(0, 1, 0);
+        }
+        if(Input.GetKey(KeyCode.DownArrow) && time > 1.5){
+            jumpEffectObject.SetActive(true);
+            rb.AddForce(0, 6, 0, ForceMode.Impulse);
+            time = 0;
+        }else if(time > 1.0){
+            jumpEffectObject.SetActive(false);
         }
     }
 }
