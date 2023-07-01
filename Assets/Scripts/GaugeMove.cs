@@ -11,6 +11,8 @@ public class GaugeMove : MonoBehaviour
     public Slider PowerGauge;
     public Rigidbody rb;
     public GameObject pushEffectObject;
+    public GameObject fallCamera;
+    public GameObject cmVcam;
 
     void Start()
     {
@@ -23,6 +25,10 @@ public class GaugeMove : MonoBehaviour
 
     void Update()
     {
+        if(transform.position.y < -1){
+            fallCamera.SetActive(true);
+            cmVcam.SetActive(true);
+        }
         PowerGauge.value = MovePower;
 
         if (Input.GetKeyDown(KeyCode.W)){
