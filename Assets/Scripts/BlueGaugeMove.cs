@@ -9,14 +9,17 @@ public class BlueGaugeMove : MonoBehaviour
     public AudioClip SE1;
     private float MovePower;
     public Slider PowerGauge;
+    public Slider JumpGauge;
     public Rigidbody rb;
     public GameObject pushEffectObject;
     public GameObject jumpEffectObject;
     public GameObject fallCamera;
     public GameObject cmVcam;
-    public GameObject canvas;
+    public GameObject sliders;
+    public GameObject texts;
     private float time = 3;
     private bool gameStart = false;
+    public bool gameOver = false;
 
     // Start is called before the first frame update
     void Start()
@@ -39,9 +42,11 @@ public class BlueGaugeMove : MonoBehaviour
         if(transform.position.y < -1){
             fallCamera.SetActive(true);
             cmVcam.SetActive(true);
-            canvas.SetActive(false);
+            sliders.SetActive(false);
+            StartCoroutine(GameOver());
         }
         PowerGauge.value = MovePower;
+        JumpGauge.value = time;
         if(Input.GetKeyDown(KeyCode.UpArrow)){
             MovePower = 0;
             pushEffectObject.SetActive(true);
@@ -65,7 +70,7 @@ public class BlueGaugeMove : MonoBehaviour
         if(Input.GetKey(KeyCode.RightArrow)){
             transform.Rotate(0, 1, 0);
         }
-        if(Input.GetKey(KeyCode.DownArrow) && time > 1.5){
+        if(Input.GetKey(KeyCode.DownArrow) && time > 2){
             jumpEffectObject.SetActive(true);
             rb.AddForce(0, 6, 0, ForceMode.Impulse);
             time = 0;
@@ -74,8 +79,12 @@ public class BlueGaugeMove : MonoBehaviour
         }
     }
     IEnumerator GameStart(){
-        Debug.Log("GameStart");
         yield return new WaitForSeconds(2f);
         gameStart = true;
+    }
+    IEnumerator GameOver(){
+        yield return new WaitForSeconds(3f);
+        texts.SetActive(true);
+        gameOver = true;
     }
 }

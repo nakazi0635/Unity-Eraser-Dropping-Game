@@ -9,20 +9,24 @@ public class GaugeMove : MonoBehaviour
     public AudioClip SE1;
     private float MovePower;
     public Slider PowerGauge;
+    public Slider JumpGauge;
     public Rigidbody rb;
     public GameObject pushEffectObject;
     public GameObject jumpEffectObject;
     public GameObject fallCamera;
     public GameObject cmVcam;
-    public GameObject canvas;
+    public GameObject sliders;
+    public GameObject texts;
     private float time = 3;
     private bool gameStart = false;
+    public bool gameOver = false;
 
     void Start()
     {
         MovePower = 0;
         pushEffectObject.SetActive(false);
         jumpEffectObject.SetActive(false);
+        texts.SetActive(false);
 
         audioSource = GetComponent<AudioSource>(); // AudioSourceを取得
         audioSource.clip = SE1; // 効果音を設定
@@ -37,9 +41,11 @@ public class GaugeMove : MonoBehaviour
         if(transform.position.y < -1){
             fallCamera.SetActive(true);
             cmVcam.SetActive(true);
-            canvas.SetActive(false);
+            sliders.SetActive(false);
+            StartCoroutine(GameOver());
         }
         PowerGauge.value = MovePower;
+        JumpGauge.value = time;
 
         if (Input.GetKeyDown(KeyCode.W)){
             MovePower = 0;
@@ -68,7 +74,7 @@ public class GaugeMove : MonoBehaviour
         if (Input.GetKey(KeyCode.D)){
             transform.Rotate(0, 1, 0);
         }
-        if(Input.GetKey(KeyCode.S) && time > 1.5){
+        if(Input.GetKey(KeyCode.S) && time > 2){
             jumpEffectObject.SetActive(true);
             rb.AddForce(0, 6, 0, ForceMode.Impulse);
             time = 0;
@@ -78,8 +84,12 @@ public class GaugeMove : MonoBehaviour
         
     }
     IEnumerator GameStart(){
-        Debug.Log("GameStart");
         yield return new WaitForSeconds(2f);
         gameStart = true;
+    }
+    IEnumerator GameOver(){
+        yield return new WaitForSeconds(3f);
+        texts.SetActive(true);
+        gameOver = true;
     }
 }

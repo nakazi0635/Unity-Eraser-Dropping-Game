@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class SceneMove : MonoBehaviour
 {
     private static bool DoNotDestroy = false;
+    private BlueGaugeMove blueGaugeMove;
+    private GaugeMove gaugeMove;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +26,7 @@ public class SceneMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)){
             SceneManager.LoadScene("Game");
-        }else if (Input.GetKeyDown(KeyCode.Alpha1)){
+        }else if (Input.GetKeyDown(KeyCode.Space) && (blueGaugeMove.gameOver || gaugeMove.gameOver)){
             SceneManager.LoadScene("Title");
         }
     }
