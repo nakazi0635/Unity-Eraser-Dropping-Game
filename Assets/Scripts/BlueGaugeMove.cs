@@ -16,6 +16,8 @@ public class BlueGaugeMove : MonoBehaviour
     public GameObject cmVcam;
     public GameObject canvas;
     private float time = 3;
+    private bool gameStart = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +27,14 @@ public class BlueGaugeMove : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>(); // AudioSourceを取得
         audioSource.clip = SE1; // 効果音を設定
+        StartCoroutine(GameStart());
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!gameStart) return;
+
         time += Time.deltaTime;
         if(transform.position.y < -1){
             fallCamera.SetActive(true);
@@ -67,5 +72,10 @@ public class BlueGaugeMove : MonoBehaviour
         }else if(time > 1.0){
             jumpEffectObject.SetActive(false);
         }
+    }
+    IEnumerator GameStart(){
+        Debug.Log("GameStart");
+        yield return new WaitForSeconds(2f);
+        gameStart = true;
     }
 }

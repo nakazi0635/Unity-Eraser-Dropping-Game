@@ -16,6 +16,7 @@ public class GaugeMove : MonoBehaviour
     public GameObject cmVcam;
     public GameObject canvas;
     private float time = 3;
+    private bool gameStart = false;
 
     void Start()
     {
@@ -25,10 +26,13 @@ public class GaugeMove : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>(); // AudioSourceを取得
         audioSource.clip = SE1; // 効果音を設定
+        StartCoroutine(GameStart());
     }
 
     void Update()
     {
+        if (!gameStart) return;
+
         time += Time.deltaTime;
         if(transform.position.y < -1){
             fallCamera.SetActive(true);
@@ -72,5 +76,10 @@ public class GaugeMove : MonoBehaviour
             jumpEffectObject.SetActive(false);
         }
         
+    }
+    IEnumerator GameStart(){
+        Debug.Log("GameStart");
+        yield return new WaitForSeconds(2f);
+        gameStart = true;
     }
 }
