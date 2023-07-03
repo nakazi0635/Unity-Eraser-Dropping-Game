@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneMove : MonoBehaviour
 {
-    private static bool DoNotDestroy = false;
     private BlueGaugeMove blueGaugeMove;
     private GaugeMove gaugeMove;
     public bool showExplain = false; 
@@ -17,13 +16,6 @@ public class SceneMove : MonoBehaviour
     {
         explainPanel.SetActive(false);
         textPanel.SetActive(true);
-        if (DoNotDestroy == true)
-        {
-            Destroy(this.gameObject);
-        }else{
-            DontDestroyOnLoad(this.gameObject);
-            DoNotDestroy = true;
-        }
         // Debug.Log(blueGaugeMove.gameOver);
         // Debug.Log(titleCanvasManager.showExplain);
 

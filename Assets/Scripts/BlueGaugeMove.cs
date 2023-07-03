@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BlueGaugeMove : MonoBehaviour
 {
@@ -51,15 +52,13 @@ public class BlueGaugeMove : MonoBehaviour
             MovePower = 0;
             pushEffectObject.SetActive(true);
             audioSource.Play(); // 効果音のループ再生を開始
-        }
-        if(Input.GetKey(KeyCode.UpArrow)){
+        }else if(Input.GetKey(KeyCode.UpArrow)){
             MovePower += Time.deltaTime * 100;
             
             if(MovePower > 100){
                 MovePower = 0;
             }
-        }
-        if(Input.GetKeyUp(KeyCode.UpArrow)){
+        }else if(Input.GetKeyUp(KeyCode.UpArrow)){
             rb.AddForce(transform.forward * -1 * MovePower/5, ForceMode.Impulse);
             pushEffectObject.SetActive(false);
             audioSource.Stop(); // 効果音のループ再生を停止
@@ -76,6 +75,9 @@ public class BlueGaugeMove : MonoBehaviour
             time = 0;
         }else if(time > 1.0){
             jumpEffectObject.SetActive(false);
+        }
+        if(Input.GetKey(KeyCode.Space) && gameOver){
+            SceneManager.LoadScene("Game");
         }
     }
     IEnumerator GameStart(){

@@ -823,7 +823,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248029843}
-  m_LocalRotation: {x: 0.045459256, y: 0.82139933, z: -0.066126265, w: 0.5646804}
+  m_LocalRotation: {x: 0.045459237, y: 0.82139933, z: -0.066126235, w: 0.5646804}
   m_LocalPosition: {x: -65.35126, y: -27.535345, z: 15.370415}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2057,7 +2057,6 @@ GameObject:
   m_Component:
   - component: {fileID: 558661198}
   - component: {fileID: 558661197}
-  - component: {fileID: 558661199}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -2142,22 +2141,6 @@ Transform:
   m_Father: {fileID: 515961741}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &558661199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558661196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b17d4072da208403a8b3686313042f96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gaugeMove: {fileID: 0}
-  showExplain: 0
-  textPanel: {fileID: 0}
-  explainPanel: {fileID: 0}
 --- !u!1001 &583293807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4141,7 +4124,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962183619}
-  m_LocalRotation: {x: 0.14649302, y: -0.21163388, z: 0.03210158, w: 0.96577454}
+  m_LocalRotation: {x: 0.14649302, y: -0.21163386, z: 0.03210158, w: 0.96577454}
   m_LocalPosition: {x: -9.364559, y: -29.704079, z: -63.760544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4227,7 +4210,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.14649302, y: -0.21163388, z: 0.03210158, w: 0.96577454}
+  m_LocalRotation: {x: 0.14649302, y: -0.21163386, z: 0.03210158, w: 0.96577454}
   m_LocalPosition: {x: 17.91323, y: 8.795921, z: -19.340332}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5951,7 +5934,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17d4072da208403a8b3686313042f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gaugeMove: {fileID: 0}
   showExplain: 0
   textPanel: {fileID: 1913497232}
   explainPanel: {fileID: 136801956}
