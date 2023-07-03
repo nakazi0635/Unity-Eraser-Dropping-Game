@@ -20,7 +20,8 @@ public class BlueGaugeMove : MonoBehaviour
     public GameObject texts;
     private float time = 3;
     private bool gameStart = false;
-    public bool gameOver = false;
+    private bool gameOver = false;
+    private bool firstPushed = true;
 
     // Start is called before the first frame update
     void Start()
@@ -48,12 +49,19 @@ public class BlueGaugeMove : MonoBehaviour
         }
         PowerGauge.value = MovePower;
         JumpGauge.value = time;
+
         if(Input.GetKeyDown(KeyCode.UpArrow)){
             MovePower = 0;
             pushEffectObject.SetActive(true);
             audioSource.Play(); // 効果音のループ再生を開始
         }else if(Input.GetKey(KeyCode.UpArrow)){
             MovePower += Time.deltaTime * 100;
+
+            if(firstPushed){
+                firstPushed = false;
+                pushEffectObject.SetActive(true);
+                audioSource.Play(); // 効果音のループ再生を開始
+            }
             
             if(MovePower > 100){
                 MovePower = 0;
