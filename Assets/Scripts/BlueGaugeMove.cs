@@ -39,7 +39,7 @@ public class BlueGaugeMove : MonoBehaviour
         if (!gameStart) return;
 
         time += Time.deltaTime;
-        if(transform.position.y < -1){
+        if(transform.position.y < -1 || transform.position.z > 13 || transform.position.z < -13 || transform.position.x > 20 || transform.position.x < 0){
             fallCamera.SetActive(true);
             cmVcam.SetActive(true);
             sliders.SetActive(false);

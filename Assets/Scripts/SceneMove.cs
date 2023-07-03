@@ -8,10 +8,15 @@ public class SceneMove : MonoBehaviour
     private static bool DoNotDestroy = false;
     private BlueGaugeMove blueGaugeMove;
     private GaugeMove gaugeMove;
+    public bool showExplain = false; 
+    public GameObject textPanel;
+    public GameObject explainPanel;
 
     // Start is called before the first frame update
     void Start()
     {
+        explainPanel.SetActive(false);
+        textPanel.SetActive(true);
         if (DoNotDestroy == true)
         {
             Destroy(this.gameObject);
@@ -19,15 +24,20 @@ public class SceneMove : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             DoNotDestroy = true;
         }
+        // Debug.Log(blueGaugeMove.gameOver);
+        // Debug.Log(titleCanvasManager.showExplain);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Space) && showExplain == false){
+            explainPanel.SetActive(true);
+            textPanel.SetActive(false);
+            showExplain = true;
+        }else if(Input.GetKeyDown(KeyCode.Space)){
             SceneManager.LoadScene("Game");
-        }else if (Input.GetKeyDown(KeyCode.Space) && (blueGaugeMove.gameOver || gaugeMove.gameOver)){
-            SceneManager.LoadScene("Title");
         }
     }
 }
