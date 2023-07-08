@@ -136,8 +136,8 @@ GameObject:
   - component: {fileID: 45937782}
   - component: {fileID: 45937781}
   - component: {fileID: 45937785}
-  - component: {fileID: 45937784}
   - component: {fileID: 45937786}
+  - component: {fileID: 45937787}
   m_Layer: 0
   m_Name: Red
   m_TagString: RedEraser
@@ -226,28 +226,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45937779}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &45937784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45937779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce90e8ec6e8014175b931b2f8d353034, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SE1: {fileID: 8300000, guid: a44895f5157b8452f88d4c55d44b838a, type: 3}
-  PowerGauge: {fileID: 1659144121}
-  JumpGauge: {fileID: 1278175735}
-  rb: {fileID: 45937785}
-  pushEffectObject: {fileID: 197432021}
-  jumpEffectObject: {fileID: 74558767}
-  fallCamera: {fileID: 1069021835}
-  cmVcam: {fileID: 1869763265}
-  sliders: {fileID: 68063689}
-  texts: {fileID: 330986454}
 --- !u!54 &45937785
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -360,6 +338,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &45937787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45937779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a5c53127f7a469a9b8075499bdcd1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SE1: {fileID: 8300000, guid: a44895f5157b8452f88d4c55d44b838a, type: 3}
+  PowerGauge: {fileID: 1659144121}
+  JumpGauge: {fileID: 1278175735}
+  rb: {fileID: 45937785}
+  pushEffectObject: {fileID: 197432021}
+  jumpEffectObject: {fileID: 74558767}
+  fallCamera: {fileID: 1069021835}
+  cmVcam: {fileID: 1869763265}
+  sliders: {fileID: 68063689}
+  texts: {fileID: 330986454}
 --- !u!1001 &60144838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3704,9 +3704,9 @@ GameObject:
   - component: {fileID: 851072331}
   - component: {fileID: 851072330}
   - component: {fileID: 851072329}
-  - component: {fileID: 851072334}
   - component: {fileID: 851072335}
   - component: {fileID: 851072336}
+  - component: {fileID: 851072337}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -3811,28 +3811,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &851072334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851072328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f59dd32d8b124801bce4429986aa514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SE1: {fileID: 8300000, guid: a44895f5157b8452f88d4c55d44b838a, type: 3}
-  PowerGauge: {fileID: 1027063290}
-  JumpGauge: {fileID: 897462081}
-  rb: {fileID: 851072329}
-  pushEffectObject: {fileID: 431422593}
-  jumpEffectObject: {fileID: 175549525}
-  fallCamera: {fileID: 1069021835}
-  cmVcam: {fileID: 2072952692}
-  sliders: {fileID: 68063689}
-  texts: {fileID: 330986454}
 --- !u!114 &851072335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3943,6 +3921,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &851072337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851072328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f908e185fed4d4892a9719c9151e1e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SE1: {fileID: 8300000, guid: a44895f5157b8452f88d4c55d44b838a, type: 3}
+  PowerGauge: {fileID: 1027063290}
+  JumpGauge: {fileID: 897462081}
+  rb: {fileID: 851072329}
+  pushEffectObject: {fileID: 431422593}
+  jumpEffectObject: {fileID: 175549525}
+  fallCamera: {fileID: 1069021835}
+  cmVcam: {fileID: 2072952692}
+  sliders: {fileID: 68063689}
+  texts: {fileID: 330986454}
 --- !u!1001 &866694497
 PrefabInstance:
   m_ObjectHideFlags: 0
