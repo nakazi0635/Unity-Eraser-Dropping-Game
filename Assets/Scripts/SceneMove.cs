@@ -7,7 +7,7 @@ public class SceneMove : MonoBehaviour
 {
     // 必要なコンポーネントやGameObjectをインスペクタから設定できるように[SerializeField]を使用
     [SerializeField] private BlueGaugeMove blueGaugeMove;
-    [SerializeField] private GaugeMove gaugeMove;
+    [SerializeField] private RedGaugeMove gaugeMove;
     [SerializeField] private GameObject textPanel;
     [SerializeField] private GameObject explainPanel;
     [SerializeField] private GameObject explain_1;

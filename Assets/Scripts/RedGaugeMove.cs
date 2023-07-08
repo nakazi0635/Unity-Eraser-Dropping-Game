@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GaugeMove : MonoBehaviour
+public class RedGaugeMove : MonoBehaviour
 {
     AudioSource audioSource;
     public AudioClip SE1;
