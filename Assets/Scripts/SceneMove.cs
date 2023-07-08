@@ -5,53 +5,100 @@ using UnityEngine.SceneManagement;
 
 public class SceneMove : MonoBehaviour
 {
-    private BlueGaugeMove blueGaugeMove;
-    private GaugeMove gaugeMove;
-    public bool showExplain = false; 
-    public GameObject textPanel;
-    public GameObject explainPanel;
-    public GameObject explain_1;
-    public GameObject explain_2;
-    public GameObject explain_3;
-    public int explain_num = 1;
+    // 必要なコンポーネントやGameObjectをインスペクタから設定できるように[SerializeField]を使用
+    [SerializeField] private BlueGaugeMove blueGaugeMove;
+    [SerializeField] private GaugeMove gaugeMove;
+    [SerializeField] private GameObject textPanel;
+    [SerializeField] private GameObject explainPanel;
+    [SerializeField] private GameObject explain_1;
+    [SerializeField] private GameObject explain_2;
+    [SerializeField] private GameObject explain_3;
 
-    // Start is called before the first frame update
-    void Start()
+    // シーン名は一箇所で管理
+    private static readonly string GAME_SCENE = "Game";
+
+    private bool showExplain = false; 
+    private int explainNum = 1;
+
+    // 最初の設定を行うメソッド
+    private void Start()
+    {
+        InitializeScene();
+    }
+
+    // 入力に応じて処理を行うメソッド
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            HandleSpaceKeyPress();
+        }
+        else if(Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            HandleRightKeyPress();
+        }
+        else if(Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            HandleLeftKeyPress();
+        }
+    }
+
+    // 初期化用のメソッド
+    private void InitializeScene()
     {
         explainPanel.SetActive(false);
         textPanel.SetActive(true);
         explain_2.SetActive(false);
         explain_3.SetActive(false);
-        // Debug.Log(blueGaugeMove.gameOver);
-        // Debug.Log(titleCanvasManager.showExplain);
-
     }
 
-    // Update is called once per frame
-    void Update()
+    // スペースキーが押された時の処理
+    private void HandleSpaceKeyPress()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && showExplain == false){
+        if (showExplain == false)
+        {
             explainPanel.SetActive(true);
             textPanel.SetActive(false);
             showExplain = true;
-        }else if(Input.GetKeyDown(KeyCode.RightArrow) && explain_num == 1){
-            explain_num = 2;
-            explain_1.SetActive(false);
-            explain_2.SetActive(true);
-        }else if(Input.GetKeyDown(KeyCode.RightArrow) && explain_num == 2){
-            explain_num = 3;
-            explain_2.SetActive(false);
-            explain_3.SetActive(true);
-        }else if(Input.GetKeyDown(KeyCode.RightArrow) && explain_num == 3){
-            SceneManager.LoadScene("Game");
-        }else if(Input.GetKeyDown(KeyCode.LeftArrow) && explain_num == 3){
-            explain_num = 2;
-            explain_3.SetActive(false);
-            explain_2.SetActive(true);
-        }else if(Input.GetKeyDown(KeyCode.LeftArrow) && explain_num == 2){
-            explain_num = 1;
-            explain_2.SetActive(false);
-            explain_1.SetActive(true);
+        }
+    }
+
+    // 右キーが押された時の処理
+    private void HandleRightKeyPress()
+    {
+        switch (explainNum)
+        {
+            case 1:
+                explainNum = 2;
+                explain_1.SetActive(false);
+                explain_2.SetActive(true);
+                break;
+            case 2:
+                explainNum = 3;
+                explain_2.SetActive(false);
+                explain_3.SetActive(true);
+                break;
+            case 3:
+                SceneManager.LoadScene(GAME_SCENE);
+                break;
+        }
+    }
+
+    // 左キーが押された時の処理
+    private void HandleLeftKeyPress()
+    {
+        switch (explainNum)
+        {
+            case 2:
+                explainNum = 1;
+                explain_2.SetActive(false);
+                explain_1.SetActive(true);
+                break;
+            case 3:
+                explainNum = 2;
+                explain_3.SetActive(false);
+                explain_2.SetActive(true);
+                break;
         }
     }
 }
