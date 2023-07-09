@@ -3,7 +3,7 @@
 Creating an Eraser Dropping Battle Game in Unity
 
 # Demo
-![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmhoZm9xdm5jY3FtbjM5bzlpMjdkMG9pZTJxYXZqcTdmMXI5djlqMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/V90vIBeosyZXKmlbgV/giphy.gif)
+![](https://media.giphy.com/media/nX3K4J3dOdFZcsgrye/giphy.gif)
 # Function
 
 Red eraser is operated by WASD keys
@@ -24,7 +24,7 @@ When the green meter is at its maximum, you can press the jump button. The green
 
 Publish to UnityPlay.
 
-https://play.unity.com/mg/other/webgl-builds-353126
+https://play.unity.com/mg/other/webgl-builds-358256
 
 * Remix
 
