@@ -36,11 +36,11 @@ public class RedEraserScript : PlayerController
         }
         // Aキーが押された時の処理
         if (Input.GetKey(KeyCode.A)){
-            transform.Rotate(0, -1, 0);
+            transform.Rotate(0, -2, 0);
         }
         // Dキーが押された時の処理
         if (Input.GetKey(KeyCode.D)){
-            transform.Rotate(0, 1, 0);
+            transform.Rotate(0, 2, 0);
         }
         // Sキーが押された時の処理
         if(Input.GetKey(KeyCode.S) && time > 2){

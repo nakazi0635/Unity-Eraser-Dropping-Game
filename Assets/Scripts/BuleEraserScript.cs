@@ -36,11 +36,11 @@ public class BuleEraserScript : PlayerController
         }
         // LeftArrowキーが押された時の処理
         if(Input.GetKey(KeyCode.LeftArrow)){
-            transform.Rotate(0, -1, 0);
+            transform.Rotate(0, -2, 0);
         }
         // RightArrowキーが押された時の処理
         if(Input.GetKey(KeyCode.RightArrow)){
-            transform.Rotate(0, 1, 0);
+            transform.Rotate(0, 2, 0);
         }
         // DownArrowキーが押された時の処理
         if(Input.GetKey(KeyCode.DownArrow) && time > 2){
