@@ -56,7 +56,7 @@ public abstract class PlayerController : MonoBehaviour
         PowerGauge.value = MovePower;
         JumpGauge.value = time;
 
-        // 入力をチェックします。
+        // 入力をチェック。
         CheckInput();
     }
 
