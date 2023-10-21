@@ -3705,8 +3705,8 @@ GameObject:
   - component: {fileID: 851072330}
   - component: {fileID: 851072329}
   - component: {fileID: 851072335}
-  - component: {fileID: 851072336}
   - component: {fileID: 851072337}
+  - component: {fileID: 851072336}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -4819,7 +4819,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ba0b15ecab120428c8af045951c274b0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.46
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
